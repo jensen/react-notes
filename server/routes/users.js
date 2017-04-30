@@ -9,8 +9,8 @@ router.get('/', (request, response) => {
 });
 
 router.get('/:id', (request, response) => {
-  User.find(request.params.id).then(users => {
-    response.json(users);
+  User.find(request.params.id).then(user => {
+    response.json(user);
   });
 });
 
