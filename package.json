@@ -1,0 +1,15 @@
+{
+  "name": "react-notes",
+  "version": "1.0.0",
+  "description": "A sample project for the week 5 day 2 react lecture.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:design": "node_modules/.bin/node-sass design/scss/main.scss design/css/app-generated.css"
+  },
+  "author": "Karl Jensen",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.5.2"
+  }
+}
