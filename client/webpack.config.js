@@ -1,6 +1,7 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './client/js/App.jsx',
@@ -46,6 +47,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './client/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([{
+      from: './client/images/**/*',
+      to: 'images/',
+      flatten: true
+    }])
   ]
 }
