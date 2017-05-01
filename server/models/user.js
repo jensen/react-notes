@@ -29,9 +29,7 @@ class User {
       first,
       last
     }, 'id').then(user => {
-      return new Promise((resolve, reject) => {
-        resolve(new User(user[0], first, last));
-      });
+      return User.find(user[0]);
     });
   }
 

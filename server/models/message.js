@@ -43,6 +43,15 @@ class Message {
     });
   }
 
+  static create(user, content) {
+    return db('messages').insert({
+      user_id: user.id,
+      content: content
+    }, 'id').then(message => {
+      return Message.find(message[0]);
+    });
+  }
+
   constructor(id, user, content, date, likes) {
     this.id = id;
     this.user = user;

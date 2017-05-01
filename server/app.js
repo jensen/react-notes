@@ -1,4 +1,5 @@
 const express = require('express');
+const body = require('body-parser');
 const cookies = require('cookie-parser');
 
 const users = require('./routes/users');
@@ -10,6 +11,7 @@ const app = express();
 
 const PORT = 8080;
 
+app.use(body.json());
 app.use(cookies());
 
 app.use((request, response, next) => {

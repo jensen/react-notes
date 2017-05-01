@@ -1,11 +1,20 @@
 const router = require('express').Router();
 
+const User = require('../models/user');
 const Message = require('../models/message');
 
 router.get('/', (request, response) => {
   Message.all().then(messages => {
     response.json(messages);
   });
+});
+
+router.post('/', (request, response) => {
+  User.find(request.cookies.user).then(user => {
+    return Message.create(user, request.body.content);
+  }).then(message => {
+    response.json({});
+  })
 });
 
 router.get('/:id', (request, response) => {
