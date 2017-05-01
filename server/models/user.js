@@ -21,6 +21,20 @@ class User {
     });
   }
 
+  static create() {
+    const first = generate.first();
+    const last = generate.last();
+
+    return db('users').insert({
+      first,
+      last
+    }, 'id').then(user => {
+      return new Promise((resolve, reject) => {
+        resolve(new User(user[0], first, last));
+      });
+    });
+  }
+
   constructor(id, first, last) {
     this.id = id;
     this.first = first;
