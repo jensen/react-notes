@@ -19,19 +19,8 @@ const compiler = webpack.core(webpack.config);
 
 const PORT = 8080;
 
-app.use(webpack.middleware(compiler, {
-  publicPath: webpack.config.output.publicPath,
-  noInfo: true,
-  stats: {
-    colors: true
-  }
-}));
-app.use(webpack.hot(compiler));
-
 app.use(body.json());
 app.use(cookies());
-
-app.use(express.static('build'));
 
 app.use((request, response, next) => {
   if(!request.cookies.user) {
@@ -44,6 +33,16 @@ app.use((request, response, next) => {
 
   next();
 });
+
+app.use(webpack.middleware(compiler, {
+  publicPath: webpack.config.output.publicPath,
+  noInfo: true,
+  stats: {
+    colors: true
+  }
+}));
+
+app.use(webpack.hot(compiler));
 
 app.use('/users', users);
 app.use('/messages/', messages);

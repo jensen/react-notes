@@ -72,12 +72,13 @@ header.container {
       background-color: #ECF0F1;
       padding: $spacing/2 $spacing $spacing/2 $spacing;
 
-      span.error {
-        color: #E74C3C;
+      span.counter {
+        color: #2C3E50;
+        font-weight: 800;
       }
 
-      span.counter {
-        font-weight: 800;
+      span.error {
+        color: #E74C3C;
         float: right;
       }
 

@@ -7,7 +7,7 @@ const User = require('./user.js');
 function collate() {
   return db('messages')
         .groupBy('messages.id', 'users.first', 'users.last')
-        .orderBy('messages.id')
+        .orderBy('messages.id', 'desc')
         .join('users', 'messages.user_id', 'users.id')
         .fullOuterJoin('likes', 'messages.id', 'likes.message_id')
         .select('messages.id',

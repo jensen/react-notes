@@ -17,7 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: [/\.js?$/, /\.jsx?$/],
         include: [
           path.resolve(__dirname, 'js')
         ],
