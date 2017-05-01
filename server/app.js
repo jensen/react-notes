@@ -2,17 +2,36 @@ const express = require('express');
 const body = require('body-parser');
 const cookies = require('cookie-parser');
 
+const webpack = {
+  core: require('webpack'),
+  middleware: require('webpack-dev-middleware'),
+  hot: require('webpack-hot-middleware'),
+  config: require('../client/webpack.config.js')
+}
+
 const users = require('./routes/users');
 const messages = require('./routes/messages');
 
 const User = require('./models/user');
 
 const app = express();
+const compiler = webpack.core(webpack.config);
 
 const PORT = 8080;
 
+app.use(webpack.middleware(compiler, {
+  publicPath: webpack.config.output.publicPath,
+  noInfo: true,
+  stats: {
+    colors: true
+  }
+}));
+app.use(webpack.hot(compiler));
+
 app.use(body.json());
 app.use(cookies());
+
+app.use(express.static('build'));
 
 app.use((request, response, next) => {
   if(!request.cookies.user) {
@@ -28,10 +47,6 @@ app.use((request, response, next) => {
 
 app.use('/users', users);
 app.use('/messages/', messages);
-
-app.get('/', (request, response) => {
-
-});
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
