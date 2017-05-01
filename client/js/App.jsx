@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+require('../scss/main.scss');
+
 class App extends Component {
   render() {
     return (
-      <h1>TWTR</h1>
+      <div></div>
     )
   }
 }
