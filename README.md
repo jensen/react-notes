@@ -387,7 +387,7 @@ If we want to create a button that shows and hides content, we need to do four t
 ```javascript
 onCompose() {
   this.setState({
-    compose: !prev.visible.compose
+    compose: !this.state.compose
   });
 }
 ```
