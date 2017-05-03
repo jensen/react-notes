@@ -24,7 +24,7 @@ require('../scss/main.scss');
   13.  Setup an event handler to use the function, passed as a prop.
   14.  In the header create the error state and pass it as a prop to the status.
   15.  Show the error text if it is not empty.
-  17.  Switch from hard coded posts to json that uses a fetch (ajax) call.
+  16.  Switch from hard coded posts to json that uses a fetch (ajax) call.
   17.  Save the new post to the database in the App.jsx post handler function.
   18.  Toggle the visibility of the compose window.
 
