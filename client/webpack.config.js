@@ -17,7 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: [/\.js?$/, /\.jsx?$/],
+        test: [/\.jsx?$/],
         include: [
           path.resolve(__dirname, 'js')
         ],
@@ -27,7 +27,7 @@ module.exports = {
         }
       },
       {
-        test: /\.scss?$/,
+        test: /\.scss$/,
         include: [
           path.resolve(__dirname, 'scss')
         ],
