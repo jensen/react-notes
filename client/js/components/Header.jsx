@@ -33,7 +33,7 @@ class Header extends Component {
 
   onContent(event) {
     this.setState({
-      content: event.target.innerText
+      content: event.target.value
     });
   }
 
@@ -69,13 +69,11 @@ class Header extends Component {
         {
           this.state.visible.compose &&
           <section className="create">
-            <div
+            <textarea
               className="textarea"
               onInput={ this.onContent }
-              contentEditable
-              suppressContentEditableWarning={ true }>
-              { this.state.content }
-            </div>
+              value={ this.state.content }>
+            </textarea>
             <Status error={ this.state.error } count={ this.state.content.length } max={ POST_LENGTH_MAX } />
             <button className="post" onClick={ this.onPost }>POST</button>
           </section>
