@@ -54,23 +54,26 @@ header.container {
   }
 
   section.create {
-    div.textarea {
+    textarea.textarea {
       background-color: #fff;
+      border: 0;
       color: #2C3E50;
       font-size: 1.2rem;
       height: 172px;
       overflow: scroll;
       padding: $spacing;
+      resize: none;
       width: 100%;
     }
 
-    div.textarea:focus {
+    textarea.textarea:focus {
       outline: none;
     }
 
     div.status {
       background-color: #ECF0F1;
       padding: $spacing/2 $spacing $spacing/2 $spacing;
+      margin-top: -4px;
 
       span.counter {
         color: #2C3E50;
