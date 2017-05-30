@@ -71,7 +71,7 @@ class Header extends Component {
           <section className="create">
             <textarea
               className="textarea"
-              onInput={ this.onContent }
+              onChange={ this.onContent }
               value={ this.state.content }>
             </textarea>
             <Status error={ this.state.error } count={ this.state.content.length } max={ POST_LENGTH_MAX } />
