@@ -15,7 +15,7 @@ The documentation from Facebook is excellent. It is definitely worth reading all
 
 ## Thinking in Components
 
-When we develop user interfaces in React we need to think about he user interface as a collection of `components`. Typically we want to start iterating on the structure of the UI as a wireframe. It is quick and inexpensive to iterate on. Once we are happy with the layout of the interface we can move to a visual design tool. The wireframe helps us create a structure as html, and the visual design helps us setup our stylesheets.
+When we develop user interfaces in React we need to think about the user interface as a collection of `components`. Typically we want to start iterating on the structure of the UI as a wireframe, which is relatively quick. Once we are happy with the layout of the interface we can move to a visual design tool. The wireframe helps us create a structure as html, and the visual design helps us setup our stylesheets.
 
 The third phase in the design process is the creation of the interface as a static html file that will be converted into React components. It is a lot easier to iterate on the css and html in a static file.
 
