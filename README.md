@@ -21,9 +21,9 @@ The third phase in the design process is the creation of the interface as a stat
 
 In the example today we created components to represent `<App />, <Header />, <Status />,  <Main />, <PostSeries /> and <Post />`. Components have props & state. Props are passed into a component from outside, and state is managed inside.
 
-> A React component cannot change it’s props.
+> A React component cannot change its props.
 
-> A React component can change it’s own state.
+> A React component can change its own state.
 
 ### The Component Lifecyle
 
@@ -41,7 +41,7 @@ render()
 
 ## Props & State
 
-Once we enter the update phase of the lifecycle the component will re-render when the props change from it's parent or `setState()` is called.
+Once we enter the update phase of the lifecycle the component will re-render when the props change from its parent or `setState()` is called.
 
 If we are going to call `setState()` there are a few things we need to understand.
 
@@ -292,7 +292,7 @@ render() {
 }
 ```
 
-We expect the `<Header />` to pass it's content back to the `<App />` through the `onNewPost` function. For now we can just log out the results.
+We expect the `<Header />` to pass its content back to the `<App />` through the `onNewPost` function. For now we can just log out the results.
 
 ### 13. Setup an event handler to use the function, passed as a prop
 
@@ -362,7 +362,7 @@ componentDidMount() {
 }
 ```
 
-This is the third lifecycle method that we will be using. The `componentDidMount` function is called by React after the component and all of it's children have rendered for the first time. When the component is rendered we do an HTTP request that will get back an array of posts. We take that array of posts and assign it to our `<App />` state to trigger a render.
+This is the third lifecycle method that we will be using. The `componentDidMount` function is called by React after the component and all of its children have rendered for the first time. When the component is rendered we do an HTTP request that will get back an array of posts. We take that array of posts and assign it to our `<App />` state to trigger a render.
 
 
 ### 17. Save the new post to the database in the App.jsx post handler function
@@ -373,7 +373,7 @@ onPost() {
 }
 ```
 
-Here is another situation where we need to be aware of `this` context. By wrapping it in an arrow function we force the context to be the declared context. In this cass it's `<App />`.
+Here is another situation where we need to be aware of `this` context. By wrapping it in an arrow function we force the context to be the declared context. In this case it's `<App />`.
 
 
 ### 18. Toggle the visibility of the compose window
